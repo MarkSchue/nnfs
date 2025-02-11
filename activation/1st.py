@@ -45,7 +45,7 @@ class Loss_CategoricalCrossentropy(Loss):
         negative_log_likelihoods = -np.log(correct_confidences)
         return negative_log_likelihoods
 
-X, y = spiral_data(samples=100, classes=3)
+
 
 class Accuracy:
     def calculate(self, predictions, y):
@@ -59,6 +59,9 @@ class Accuracy:
         if len(y.shape) == 2:
             y = np.argmax(y, axis=1)
         return predictions == y
+    
+
+X, y = spiral_data(samples=100, classes=3)
 
 dense1 = Layer_Dense(2, 3)
 dense2 = Layer_Dense(3, 3)
